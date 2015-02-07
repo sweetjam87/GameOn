@@ -15,6 +15,8 @@
 		A6E7A2201A855A46001AB7EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E7A21F1A855A46001AB7EA /* Images.xcassets */; };
 		A6E7A2231A855A46001AB7EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E7A2211A855A46001AB7EA /* LaunchScreen.xib */; };
 		A6E7A22F1A855A46001AB7EA /* GameOnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E7A22E1A855A46001AB7EA /* GameOnTests.m */; };
+		A6E7A23C1A85616B001AB7EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E7A23B1A85616B001AB7EA /* CoreLocation.framework */; };
+		A6E7A2421A857C4C001AB7EA /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E7A2411A857C4C001AB7EA /* LocationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,9 @@
 		A6E7A2281A855A46001AB7EA /* GameOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E7A22D1A855A46001AB7EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E7A22E1A855A46001AB7EA /* GameOnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameOnTests.m; sourceTree = "<group>"; };
+		A6E7A23B1A85616B001AB7EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A6E7A2401A857C4C001AB7EA /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		A6E7A2411A857C4C001AB7EA /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E7A23C1A85616B001AB7EA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +71,7 @@
 		A6E7A2031A855A46001AB7EA = {
 			isa = PBXGroup;
 			children = (
+				A6E7A23B1A85616B001AB7EA /* CoreLocation.framework */,
 				A6E7A20E1A855A46001AB7EA /* GameOn */,
 				A6E7A22B1A855A46001AB7EA /* GameOnTests */,
 				A6E7A20D1A855A46001AB7EA /* Products */,
@@ -92,6 +99,8 @@
 				A6E7A2211A855A46001AB7EA /* LaunchScreen.xib */,
 				A6E7A2161A855A46001AB7EA /* GameOn.xcdatamodeld */,
 				A6E7A20F1A855A46001AB7EA /* Supporting Files */,
+				A6E7A2401A857C4C001AB7EA /* LocationService.h */,
+				A6E7A2411A857C4C001AB7EA /* LocationService.m */,
 			);
 			path = GameOn;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E7A2151A855A46001AB7EA /* AppDelegate.m in Sources */,
+				A6E7A2421A857C4C001AB7EA /* LocationService.m in Sources */,
 				A6E7A2121A855A46001AB7EA /* main.m in Sources */,
 				A6E7A21B1A855A46001AB7EA /* ViewController.m in Sources */,
 				A6E7A2181A855A46001AB7EA /* GameOn.xcdatamodeld in Sources */,

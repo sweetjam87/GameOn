@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController : UIViewController
-
+{
+//    CLLocationManager* locationManager;
+//    CLLocation* location;
+    
+    IBOutlet UILabel* latitudeLabel;
+    IBOutlet UILabel* longitudeLabel;
+    IBOutlet UILabel* altitudeLabel;
+    IBOutlet UILabel* hAccuracyLabel;
+    IBOutlet UILabel* vAccuracyLabel;
+    IBOutlet UILabel* timestampLabel;
+    IBOutlet UILabel* speedLabel;
+    IBOutlet UILabel* courseLabel;
+    
+    
+}
 
 @end
 
