@@ -20,9 +20,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [[LocationService sharedInstance]startUpdatingLocation];
+    CLRegion* testRegion = [self createTestRegion];
+    
+    [[LocationService sharedInstance] startMonitoringRegion:testRegion];
+    [[LocationService sharedInstance].locationManager requestStateForRegion:testRegion];
+    
     // Add an observer for LocationService
     [[LocationService sharedInstance]addObserver:self forKeyPath:@"currentLocation" options:NSKeyValueObservingOptionNew context:nil];
     
+}
+
+-(CLRegion*)createTestRegion{
+    
+    CLLocationCoordinate2D testLatLong = CLLocationCoordinate2DMake(34.918293, -95.753624);
+    CLLocationDistance radius = 100;
+    CLCircularRegion* region = [[CLCircularRegion alloc]initWithCenter:testLatLong radius:radius identifier:@"home"];
+    
+    return region;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object  change:(NSDictionary *)change context:(void *)context

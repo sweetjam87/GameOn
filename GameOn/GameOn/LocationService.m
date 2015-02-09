@@ -42,6 +42,10 @@
     
 }
 
+-(void)startMonitoringRegion:(CLRegion*)region{
+    [self.locationManager startMonitoringForRegion:region];
+}
+
 -(void)stopUpdatingLocation{
     // Stop Location Updates
     [self.locationManager stopUpdatingLocation];
@@ -55,5 +59,41 @@
     CLLocation* location = locations.lastObject;
     self.currentLocation = location;
 }
+
+//-(void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
+//    
+//}
+
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    UILocalNotification* notification = [[UILocalNotification alloc]init];
+    notification.fireDate = [NSDate date];
+    notification.alertBody = @"You Are Here!";
+    notification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
+        UILocalNotification* notification = [[UILocalNotification alloc]init];
+        notification.fireDate = [NSDate date];
+        notification.alertBody = @"You Have Left Home";
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
+    if (state == CLRegionStateInside) {
+        UILocalNotification* notification = [[UILocalNotification alloc]init];
+        notification.fireDate = [NSDate date];
+        notification.alertBody = @"You Are At Home!";
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error{
+    NSLog(@"Monitoring Region failed with error: %@", error);
+}
+
+
 
 @end

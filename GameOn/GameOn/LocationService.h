@@ -17,5 +17,6 @@
 @property (strong, nonatomic) CLLocation* currentLocation;
 
 -(void)startUpdatingLocation;
+-(void)startMonitoringRegion:(CLRegion*)region;
 
 @end
